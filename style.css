@@ -1,0 +1,134 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+ 
+
+ 
+body {
+  font-family: Arial, Helvetica, sans-serif
+   
+  line-height: 1.6;
+  background: #0e091d;
+}
+body > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+label {
+  transform: scale(1.5);
+  display: block;
+  width: 160px;
+  background: #CCC;
+  height: 80px;
+  border-radius: 40px;
+  background: linear-gradient(to bottom, #9e9e9e 30%, #f4f4f4);
+  box-shadow: 0 2px 0 0 #fff, 0 -2px 0 0 #969494;
+  position: relative;
+   
+}
+label input {
+  display: none;
+}
+label div {
+  display: block;
+  width: 120px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom, #8b8c8e 20%, #f4f4f4);
+  border-radius: 25px;
+}
+label div:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 46px;
+  width: 116px;
+  left: 2px;
+  top: 2px;
+  border-radius: 23px;
+  background: #828080;
+  box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, 0.8);
+  transition: 0.2s;
+}
+label i {
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  background: linear-gradient(to top, #9e9e9e 20%, #f4f4f4);
+  border-radius: 50%;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.7);
+  top: 10px;
+  left: 15px;
+  transition: 0.25s;
+}
+label i::after {
+  content:"" ;
+  position: absolute;
+  display: block;
+  width: 52px;
+  height: 52px;
+  left: 4px;
+  top: 4px;
+  border-radius: 50%;
+  background: #d5d4d4;
+  z-index: 1;
+}
+label input:checked ~ i {
+  top: 10px;
+  left: 86px;
+}
+label input:checked + div::after {
+  background: #f7931e;
+  box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, 0.6);
+}
+
+label input:checked + div > .off {
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0);
+}
+label input:checked + div > .on {
+  color: #c6631d;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+
+}
+label:hover{
+  cursor: pointer;
+}
+label:focus,
+label:active {
+  outline: 0;
+}
+.on,
+.off {
+  text-transform: uppercase;
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  font-weight: bold;
+  z-index: 2;
+   
+  transition: 0.25s;
+}
+.on {
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0);
+}
+.off {
+  left: initial;
+  right: 17px;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
